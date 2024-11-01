@@ -26,4 +26,154 @@ body {
     cursor: pointer;
     font-size: 20px;
   }
+
+    /*First Challenge*/
+    button#btn1 {
+      background-color: black;
+      color: white;
+
+      &:hover {
+        background-color: white;
+        color: black;
+        border: solid black 2px;
+        box-shadow: 6px 6px black;
+      }
+    }
+
+    /*Second Challenge*/
+    button#btn2 {
+      background-color: black;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      transition: background-color 0.3s, color 0.3s, border 0.3s;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.3s;
+      }
+
+      &:hover {
+        background-color: white;
+        color: black;
+        border: solid black 2px;
+        box-shadow: 6px 6px black;
+      }
+
+      &:hover::before {
+        left: 100%;
+      }
+    }
+
+    /*Third Challenge*/
+    button#btn3 {
+      background-color: #006d00;
+      color: white;
+      border: solid black 2px;
+
+
+      &:hover {
+        background-color:#00a800;
+        color: white;
+        
+      }
+    }
+
+    /*Fourth Challenge*/
+    div#shape1 {
+      width: 200px;
+      height: 200px;
+      background-color: #b9b9b9;
+
+      &:hover {
+        background-color:#ecde00;
+      }
+
+      &:hover::after {
+        content: "Hello!";
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bolder;
+        display: flex;
+        justify-content: center;
+        padding-top: 100px;
+        animation: fade 4s;
+      }
+    }
+
+    /*Fifth Challenge*/
+    #shape2 {
+      width: 80px;
+      height: 80px;
+      background-color: #f12300;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      /*Animation*/
+      animation-name: shapes;
+      animation-duration: 15s;
+    }
+
+    /*6th Challenge*/
+    #figure1 {
+      img {
+      }
+      &:hover img{
+        filter: grayscale(100%);
+        visibility: visible;
+      }
+
+      figcaption {
+        visibility: hidden;
+      }
+
+      &:hover figcaption{
+        visibility: visible;        
+        background-color: pink;
+        color: black;
+      }
+    }
+    
+}
+
+/*Keyframes  */
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+ @keyframes shapes {
+  0%, 100% {
+    transform: scale(1) translate(0, 0) rotate(0deg);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  25% {
+      transform: scale(0);
+      transform: translateX(28vw) translateY(0) rotate(90deg);
+      border-radius: 50%;
+      clip-path: circle(60%);
+      background-color: #00a800;
+  }
+  50% {
+    transform: scale(1);
+    transform: translateX(28vw) translateY(370px) rotate(180deg);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%)
+      
+  }
+  75% {
+      transform: translateX(0) translateY(370px) rotate(270deg);
+      clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+      background-color: orange;
+  }
 }
